@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Dictionary</title>
+</head>
+<body>
+  <h1>Serverless Cloud Dictionary</h1>
+  <input id="term" placeholder="Enter a cloud term..." />
+  <button onclick="lookup()">Search</button>
+  <p id="result"></p>
+
+  <script>
+    async function lookup() {
+      const term = document.getElementById('term').value;
+      const res = await fetch(`https://abcd1234.execute-api.us-east-1.amazonaws.com/define?term=${term}`);
+      const data = await res.json();
+      document.getElementById('result').innerText = data.definition || data.error;
+    }
+  </script>
+</body>
+</html>
