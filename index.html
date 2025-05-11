@@ -12,7 +12,7 @@
   <script>
     async function lookup() {
       const term = document.getElementById('term').value;
-      const res = await fetch(`https://abcd1234.execute-api.us-east-1.amazonaws.com/define?term=${term}`);
+      const res = await fetch(`https://hvwspq80d0.execute-api.us-east-1.amazonaws.com/define?term=${term}`);
       const data = await res.json();
       document.getElementById('result').innerText = data.definition || data.error;
     }
